@@ -1,297 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Company</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Company</title>
 
-<style>
-/* ===================== */
-/* RESET */
-/* ===================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
+    <style>
+      /* ===================== */
+      /* RESET */
+      /* ===================== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
 
-body {
-  background: #050b23;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-}
+      body {
+        background: #050b23;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+      }
 
-/* ===================== */
-/* DESKTOP 1440 */
-/* ===================== */
-.page {
-  width: 1440px;
-}
+      /* ===================== */
+      /* DESKTOP 1440 */
+      /* ===================== */
+      .page {
+        width: 1440px;
+      }
 
-/* HEADER */
-.header {
-  height: 80px;
-  padding: 0 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+      /* HEADER */
+      .header {
+        height: 80px;
+        padding: 0 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-.header nav a {
-  color: #aaa;
-  margin-left: 30px;
-  text-decoration: none;
-  font-size: 14px;
-}
+      .header nav a {
+        color: #aaa;
+        margin-left: 30px;
+        text-decoration: none;
+        font-size: 14px;
+      }
 
-.header nav a:hover {
-  color: #fff;
-}
+      .header nav a:hover {
+        color: #fff;
+      }
 
-/* HERO */
-.hero {
-  padding: 60px 200px;
-  text-align: center;
-}
+      /* HERO */
+      .hero {
+        padding: 60px 200px;
+        text-align: center;
+      }
 
-.hero img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  margin-bottom: 40px;
-}
+      .hero img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        margin-bottom: 40px;
+      }
 
-.hero h1 {
-  font-size: 36px;
-}
+      .hero h1 {
+        font-size: 36px;
+      }
 
-.hero h2 {
-  font-size: 18px;
-  color: #9fdfff;
-  margin: 10px 0 20px;
-}
+      .hero h2 {
+        font-size: 18px;
+        color: #9fdfff;
+        margin: 10px 0 20px;
+      }
 
-.hero p {
-  font-size: 14px;
-  line-height: 1.7;
-  color: #cfd8ff;
-}
+      .hero p {
+        font-size: 14px;
+        line-height: 1.7;
+        color: #cfd8ff;
+      }
 
-/* CARDS */
-.cards {
-  display: flex;
-  gap: 60px;
-  padding: 100px 160px;
-}
+      /* CARDS */
+      .cards {
+        display: flex;
+        gap: 60px;
+        padding: 100px 160px;
+      }
 
-.card {
-  width: 100%;
-}
+      .card {
+        width: 100%;
+      }
 
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
+      .card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
 
-.card h3 {
-  font-size: 20px;
-}
+      .card h3 {
+        font-size: 20px;
+      }
 
-.card h4 {
-  font-size: 14px;
-  color: #9fdfff;
-  margin: 10px 0 15px;
-}
+      .card h4 {
+        font-size: 14px;
+        color: #9fdfff;
+        margin: 10px 0 15px;
+      }
 
-.card p {
-  font-size: 13px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
+      .card p {
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  padding: 10px 30px;
-  background: #27c1d9;
-  color: #002c36;
-  text-decoration: none;
-  font-size: 13px;
-  transition: all 0.25s ease;
-}
+      /* BUTTON */
+      .btn {
+        display: inline-block;
+        padding: 10px 30px;
+        background: #27c1d9;
+        color: #002c36;
+        text-decoration: none;
+        font-size: 13px;
+        transition: all 0.25s ease;
+      }
 
-.btn:hover {
-  background: #1aa3b8;
-  color: #fff;
-  transform: translateY(-2px);
-}
+      .btn:hover {
+        background: #1aa3b8;
+        color: #fff;
+        transform: translateY(-2px);
+      }
 
-/* CTA */
-.cta {
-  display: flex;
-  align-items: center;
-  gap: 80px;
-  padding: 120px 160px;
-}
+      /* CTA */
+      .cta {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        padding: 120px 160px;
+      }
 
-.cta img {
-  width: 420px;
-  height: 420px;
-  object-fit: cover;
-}
+      .cta img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+      }
 
-.cta-text h2 {
-  font-size: 28px;
-}
+      .cta-text h2 {
+        font-size: 28px;
+      }
 
-.cta-text h4 {
-  font-size: 14px;
-  color: #9fdfff;
-  margin: 10px 0 20px;
-}
+      .cta-text h4 {
+        font-size: 14px;
+        color: #9fdfff;
+        margin: 10px 0 20px;
+      }
 
-.cta-text p {
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
+      .cta-text p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
 
-/* FOOTER */
-.footer {
-  background: #1e6b7d;
-  padding: 60px 160px;
-  display: flex;
-  justify-content: space-between;
-}
+      /* FOOTER */
+      .footer {
+        background: #1e6b7d;
+        padding: 60px 160px;
+        display: flex;
+        justify-content: space-between;
+      }
 
-.footer p {
-  font-size: 13px;
-  line-height: 1.7;
-}
+      .footer p {
+        font-size: 13px;
+        line-height: 1.7;
+        font-family: 28px 'Roboto Slab', serif;
+      }
 
-/* ===================== */
-/* 📱 PHONE 375 */
-/* ===================== */
-@media (max-width: 768px) {
+      .footer-button {
+        display: inline-block;
+        padding: 10px 30px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 13px;
+        transition: all 0.25s ease;
+        cursor: pointer;
+        text-size-adjust: 120%;
+      }
 
-  body {
-    justify-content: center;
-  }
+      .footer-button:hover {
+        color: #10242a;
 
-  .page {
-    width: 375px;
-  }
+        transform: translateY(-2px);
+      }
 
-  .header {
-    height: auto;
-    padding: 20px;
-    flex-direction: column;
-    gap: 10px;
-  }
+      @media (max-width: 768px) {
+        body {
+          justify-content: center;
+        }
 
-  .hero {
-    padding: 30px 20px;
-  }
+        .page {
+          width: 375px;
+        }
 
-  .hero img {
-    height: 200px;
-  }
+        .header {
+          height: auto;
+          padding: 20px;
+          flex-direction: column;
+          gap: 10px;
+          font-family: ROBOTO-slab;
+        }
 
-  .hero h1 {
-    font-size: 24px;
-  }
+        .hero {
+          padding: 30px 20px;
+        }
 
-  .hero h2 {
-    font-size: 14px;
-  }
+        .hero img {
+          height: 200px;
+        }
 
-  .cards {
-    flex-direction: column;
-    padding: 50px 20px;
-  }
+        .hero h1 {
+          font-size: 24px;
+        }
 
-  .card img {
-    height: 180px;
-  }
+        .hero h2 {
+          font-size: 14px;
+        }
 
-  .cta {
-    flex-direction: column;
-    padding: 60px 20px;
-    text-align: center;
-  }
+        .cards {
+          flex-direction: column;
+          padding: 50px 20px;
+        }
 
-  .cta img {
-    width: 100%;
-    height: 300px;
-  }
+        .card img {
+          height: 180px;
+        }
 
-  .footer {
-    flex-direction: column;
-    padding: 40px 20px;
-    text-align: center;
-    gap: 20px;
-  }
-}
-</style>
-</head>
+        .cta {
+          flex-direction: column;
+          padding: 60px 20px;
+          text-align: center;
+        }
 
-<body>
+        .cta img {
+          width: 100%;
+          height: 300px;
+        }
 
-<div class="page">
+        .footer {
+          flex-direction: column;
+          padding: 40px 20px;
+          text-align: center;
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <header class="header">
-    <div>your company’s name</div>
-    <nav>
-      <a href="#">home</a>
-      <a href="#">about</a>
-      <a href="#">references</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <img src="image.jpg" alt="">
-    <h1>Lorem ipsum</h1>
-    <h2>Lorem ipsum</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  </section>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div>NetiPettused</div>
+        <nav>
+          <a href="#">avaleht</a>
+          <a href="#">firma kohta</a>
+          <a href="#">viited</a>
+        </nav>
+      </header>
 
-  <section class="cards">
-    <div class="card">
-      <img src="image.jpg" alt="">
-      <h3>title here</h3>
-      <h4>this is a subtitle</h4>
-      <p>Lorem ipsum dolor sit amet.</p>
-      <a class="btn" href="#">read more</a>
+      <section class="hero">
+        <img class="hreo-img" src="/images/front-page-pic.jpeg" alt="pilt" />
+        <h1>Kaitse end internetipettuste eest</h1>
+        <h2>Õpi ära tundma petukirju, kahtlaseid linke ja valeveebilehti</h2>
+        <p>
+          Internetis liigub iga päev tuhandeid petuskeeme. Petukirjad, võltsitud
+          lingid ja libaveebid võivad varastada sinu raha, paroole ja
+          isikuandmeid. NetiPettused aitab sul õppida, kuidas neid ohte märgata
+          ja vältida.
+        </p>
+      </section>
+
+      <section class="cards">
+        <div class="card">
+          <img src="/images/petukiri.jpg" alt="" />
+          <h3>Petukirjad ja sõnumipettused</h3>
+          <h4>Kuidas neid ära tunda?</h4>
+          <p>
+            Petukirjad võivad näida nagu pank, kuller või tuttav inimene. Sageli
+            kutsuvad need sind kiiresti tegutsema näiteks linki vajutama või
+            andmeid sisestama. Õpi märkama hoiatavaid märke enne, kui on liiga
+            hilja.
+          </p>
+          <a class="btn" href="/images/Petukiri.webp">Loe rohkem</a>
+        </div>
+
+        <div class="card">
+          <img src="/images/Fake-website.jpeg" alt="" />
+          <h3>Kahtlased lingid ja libaveebid</h3>
+          <h4>Iga link ei ole turvaline</h4>
+          <p>
+            Petulingid võivad viia võltsitud veebilehtedele, mis näevad välja
+            nagu päris pangad või poed. Üks vale klikk võib anda petturitele
+            ligipääsu sinu kontodele. Siit saad teada, kuidas turvalisi linke
+            ära tunda.
+          </p>
+          <a class="btn" href="https://www.emta.ee/eraklient/e-teenused-maksutarkus/nouanded/kuidas-tunda-ara-petukirju">Loe rohkem</a>
+        </div>
+      </section>
+
+      <section class="cta">
+        <img src="/images/kysimused.png" alt="" />
+        <div class="cta-text">
+          <h2>Testi oma teadmisi ja õpi juurde</h2>
+          <h4>Kas oskad pettust märgata?</h4>
+          <p>
+            Kas teaksid, mida teha, kui saad kahtlase e-kirja või SMS-i? Meie
+            lehelt leiad praktilisi näiteid, kontrollnimekirju ja soovitusi, mis
+            aitavad sul internetis turvaliselt käituda.
+          </p>
+          <a class="btn" href="#">Loe rohkem</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>NetiPettused<br />Maasika tänav 24<br />76505 Tartu</p>
+        <p href="index.html" class="footer-button">mine algusesse</p>
+      </footer>
     </div>
-
-    <div class="card">
-      <img src="image.jpg" alt="">
-      <h3>title here</h3>
-      <h4>this is a subtitle</h4>
-      <p>Lorem ipsum dolor sit amet.</p>
-      <a class="btn" href="#">read more</a>
-    </div>
-  </section>
-
-  <section class="cta">
-    <img src="image.jpg" alt="">
-    <div class="cta-text">
-      <h2>hey, this is a good place for cta</h2>
-      <h4>this is a subtitle</h4>
-      <p>Lorem ipsum dolor sit amet.</p>
-      <a class="btn" href="#">read more</a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>Your company’s name here<br>market street 123<br>Postcode/City</p>
-  </footer>
-
-</div>
-
-</body>
+  </body>
 </html>

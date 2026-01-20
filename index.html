@@ -1,14 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Company</title>
+    <title>NetiPettused</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-      /* ===================== */
-      /* RESET */
-      /* ===================== */
+      /* Reset */
       * {
         margin: 0;
         padding: 0;
@@ -16,24 +19,29 @@
         font-family: Arial, sans-serif;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Base layout */
       body {
         background: #050b23;
         color: #ffffff;
         display: flex;
         justify-content: center;
+        overflow-x: hidden;
       }
 
-      /* ===================== */
-      /* DESKTOP 1440 */
-      /* ===================== */
+      /* Page container */
       .page {
-        width: 1440px;
+        width: 100%;
+        max-width: 1440px;
       }
 
-      /* HEADER */
+      /* Header */
       .header {
         height: 80px;
-        padding: 0 80px;
+        padding: 60px 80px 80px 160px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -41,26 +49,75 @@
 
       .header nav a {
         color: #aaa;
-        margin-left: 30px;
         text-decoration: none;
-        font-size: 14px;
+        font-size: 18px;
+        margin-left: 30px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        display: inline-block;
       }
 
       .header nav a:hover {
         color: #fff;
+        background: rgba(255, 255, 255, 0.08);
       }
 
-      /* HERO */
+      /* Neon logo text */
+      .neon-text {
+        --stroke-width: 4px;
+
+        font-family: "Pacifico", cursive;
+        text-transform: uppercase;
+        font-size: clamp(26px, 6vw, 72px);
+
+        color: #ffb3ef;
+        -webkit-text-stroke: var(--stroke-width) #ff6fe0;
+
+        text-shadow: 0 0 40px rgba(255, 79, 216, 0.85),
+          0 0 40px rgba(255, 79, 216, 0.85),
+          0 0 40px rgba(255, 79, 216, 0.85);
+
+        position: relative;
+        display: inline-block;
+        max-width: 100%;
+        white-space: nowrap;
+      }
+
+      .neon-text::after {
+        content: attr(data-text);
+        z-index: -1;
+        position: absolute;
+        top: -5%;
+        left: -0.5%;
+        color: transparent;
+        -webkit-text-stroke: var(--stroke-width) rgba(80, 0, 60, 0.9);
+      }
+
+      /* Hero section */
       .hero {
         padding: 60px 200px;
         text-align: center;
+        position: relative;
+        overflow: hidden;
       }
 
       .hero img {
         width: 100%;
         height: 420px;
         object-fit: cover;
-        margin-bottom: 40px;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.15;
+        z-index: 0;
+      }
+
+      .hero h1,
+      .hero h2,
+      .hero p {
+        position: relative;
+        z-index: 1;
       }
 
       .hero h1 {
@@ -79,11 +136,18 @@
         color: #cfd8ff;
       }
 
-      /* CARDS */
+      /* Main content width */
+      .cards,
+      .cta {
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+
+      /* Cards section */
       .cards {
         display: flex;
         gap: 60px;
-        padding: 100px 160px;
+        padding: 200px 0 50px;
       }
 
       .card {
@@ -113,7 +177,7 @@
         margin-bottom: 20px;
       }
 
-      /* BUTTON */
+      /* Primary button */
       .btn {
         display: inline-block;
         padding: 10px 30px;
@@ -130,18 +194,25 @@
         transform: translateY(-2px);
       }
 
-      /* CTA */
+      /* Call-to-action section */
       .cta {
         display: flex;
         align-items: center;
         gap: 80px;
-        padding: 120px 160px;
+        padding: 200px 0;
       }
 
       .cta img {
         width: 100%;
+        max-width: 600px;
         height: 420px;
         object-fit: cover;
+        flex: 0 0 auto;
+      }
+
+      .cta-text {
+        flex: 1;
+        min-width: 0;
       }
 
       .cta-text h2 {
@@ -160,60 +231,85 @@
         margin-bottom: 30px;
       }
 
-      /* FOOTER */
+      /* Footer */
       .footer {
-        background: #1e6b7d;
+        background: #0f172a;
         padding: 60px 160px;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        color: rgba(255, 255, 255, 0.75);
+        text-align: left;
       }
 
       .footer p {
+        margin: 0;
         font-size: 13px;
         line-height: 1.7;
-        font-family: 28px 'Roboto Slab', serif;
+        max-width: 460px;
+        font-family: "Roboto Slab", serif;
+      }
+
+      .footer strong {
+        color: rgba(255, 255, 255, 0.95);
+        font-weight: 600;
       }
 
       .footer-button {
-        display: inline-block;
-        padding: 10px 30px;
-        color: #ffffff;
+        align-self: flex-start;
+        display: block;
+        padding: 10px 0;
+        color: rgba(255, 255, 255, 0.6);
         text-decoration: none;
         font-size: 13px;
-        transition: all 0.25s ease;
+        text-align: left;
+        transition: color 0.2s ease, transform 0.2s ease;
         cursor: pointer;
-        text-size-adjust: 120%;
       }
 
       .footer-button:hover {
-        color: #10242a;
-
+        color: rgba(255, 255, 255, 0.9);
         transform: translateY(-2px);
       }
 
+      /* Responsive (mobile) */
       @media (max-width: 768px) {
         body {
           justify-content: center;
+          text-align: center;
         }
 
         .page {
-          width: 375px;
+          padding: 0 12px;
         }
 
         .header {
           height: auto;
-          padding: 20px;
+          padding: 20px 12px;
           flex-direction: column;
           gap: 10px;
-          font-family: ROBOTO-slab;
+          align-items: center;
+          text-align: center;
+        }
+
+        .header nav a {
+          margin-left: 16px;
+          font-size: 20px;
+          padding: 12px 16px;
+        }
+
+        .neon-text {
+          --stroke-width: 2px;
         }
 
         .hero {
-          padding: 30px 20px;
+          padding: 30px 12px;
         }
 
         .hero img {
-          height: 200px;
+          height: 140px;
+          top: 25%;
         }
 
         .hero h1 {
@@ -226,89 +322,111 @@
 
         .cards {
           flex-direction: column;
-          padding: 50px 20px;
+          padding: 50px 12px;
+          max-width: 100%;
+          margin: 0;
+          align-items: center;
         }
 
         .card img {
-          height: 180px;
+          height: 140px;
         }
 
         .cta {
           flex-direction: column;
-          padding: 60px 20px;
+          padding: 60px 12px;
+          max-width: 100%;
+          margin: 0;
+          align-items: center;
           text-align: center;
         }
 
         .cta img {
-          width: 100%;
-          height: 300px;
+          max-width: 100%;
+          height: 200px;
         }
 
         .footer {
-          flex-direction: column;
-          padding: 40px 20px;
+          padding: 40px 12px;
           text-align: center;
-          gap: 20px;
+          align-items: center;
+        }
+
+        .footer p {
+          max-width: 100%;
+        }
+
+        .footer-button {
+          align-self: center;
+          text-align: center;
         }
       }
     </style>
   </head>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 
   <body>
     <div class="page">
       <header class="header">
-        <div>NetiPettused</div>
+        <div class="neon-text" data-text="NetiPettused">NetiPettused</div>
         <nav>
           <a href="#">avaleht</a>
-          <a href="#">firma kohta</a>
-          <a href="#">viited</a>
+          <a href="#footer">viited</a>
         </nav>
       </header>
 
       <section class="hero">
-        <img class="hreo-img" src="/images/front-page-pic.jpeg" alt="pilt" />
+        <img src="/images/front-page-pic.jpeg" alt="Background visual" />
         <h1>Kaitse end internetipettuste eest</h1>
         <h2>Õpi ära tundma petukirju, kahtlaseid linke ja valeveebilehti</h2>
         <p>
           Internetis liigub iga päev tuhandeid petuskeeme. Petukirjad, võltsitud
           lingid ja libaveebid võivad varastada sinu raha, paroole ja
-          isikuandmeid. NetiPettused aitab sul õppida, kuidas neid ohte märgata
+          isikuandmeid. NetiPettused näitab üldiselt, kuidas neid ohte märgata
           ja vältida.
         </p>
       </section>
 
       <section class="cards">
         <div class="card">
-          <img src="/images/petukiri.jpg" alt="" />
+          <img src="/images/petukiri.jpg" alt="Petukiri example" />
           <h3>Petukirjad ja sõnumipettused</h3>
           <h4>Kuidas neid ära tunda?</h4>
           <p>
             Petukirjad võivad näida nagu pank, kuller või tuttav inimene. Sageli
             kutsuvad need sind kiiresti tegutsema näiteks linki vajutama või
-            andmeid sisestama. Õpi märkama hoiatavaid märke enne, kui on liiga
-            hilja.
+            andmeid sisestama. Paljudel juhtudel tavaliselt küsitakse tasumata
+            tollimaksu või paki kättesaamiseks vajavat maksu. Õpi märkama
+            hoiatavaid märke enne, kui on liiga hilja. Loe rohkem vajutades
+            saate veelgi täpsemat infot.
           </p>
           <a class="btn" href="/images/Petukiri.webp">Loe rohkem</a>
         </div>
 
         <div class="card">
-          <img src="/images/Fake-website.jpeg" alt="" />
+          <img src="/images/Fake-website.jpeg" alt="Fake website example" />
           <h3>Kahtlased lingid ja libaveebid</h3>
           <h4>Iga link ei ole turvaline</h4>
           <p>
             Petulingid võivad viia võltsitud veebilehtedele, mis näevad välja
             nagu päris pangad või poed. Üks vale klikk võib anda petturitele
-            ligipääsu sinu kontodele. Siit saad teada, kuidas turvalisi linke
-            ära tunda.
+            ligipääsu sinu kontodele. Peamised ohutegurid on, et link on http
+            siis annab google hoiatuse. võib ka olla vale dommeen ehk ei ole
+            .com või .ee või .eu vaid midagi muud. Veeblehe pealkiri on kahtlane
+            või tundmatu. Vajuta loe rohkem, et saad teada, kuidas turvalisi
+            linke ära tunda.
           </p>
-          <a class="btn" href="https://www.emta.ee/eraklient/e-teenused-maksutarkus/nouanded/kuidas-tunda-ara-petukirju">Loe rohkem</a>
+          <a
+            class="btn"
+            href="https://www.emta.ee/eraklient/e-teenused-maksutarkus/nouanded/kuidas-tunda-ara-petukirju"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Loe rohkem</a
+          >
         </div>
       </section>
 
       <section class="cta">
-        <img src="/images/kysimused.png" alt="" />
+        <img src="/images/kysimused.png" alt="Questions and learning" />
         <div class="cta-text">
           <h2>Testi oma teadmisi ja õpi juurde</h2>
           <h4>Kas oskad pettust märgata?</h4>
@@ -317,13 +435,29 @@
             lehelt leiad praktilisi näiteid, kontrollnimekirju ja soovitusi, mis
             aitavad sul internetis turvaliselt käituda.
           </p>
-          <a class="btn" href="#">Loe rohkem</a>
+          <a
+            class="btn"
+            href="https://www.itvaatlik.ee/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Loe rohkem</a
+          >
         </div>
       </section>
 
-      <footer class="footer">
-        <p>NetiPettused<br />Maasika tänav 24<br />76505 Tartu</p>
-        <p href="index.html" class="footer-button">mine algusesse</p>
+      <footer class="footer" id="footer">
+        <p>
+          <strong>NetiPettused</strong><br />
+          Teavitav ja hariv veebileht internetipettuste ennetamiseks.<br />
+          Pakume infot petukirjade, kahtlaste linkide ja libaveebide
+          äratundmiseks.
+        </p>
+
+        <p>Maasika tänav 24 76505 Tartu, Eesti</p>
+
+        <p>© 2026 NetiPettused. Kõik õigused kaitstud.</p>
+
+        <a href="#" class="footer-button">Avaleht</a>
       </footer>
     </div>
   </body>
